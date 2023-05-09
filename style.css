@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+body{
+height: 100vh;
+ max-width: 100vw;
+overflow: hidden;
+background-color: #ffffff;
+}
+
+   main.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+ max-width: 1050px ;    
+ 
+}  
+
+
+/* nav bar */ 
+nav{
+    background-color: #f8f8f8;
+}
+
+.top{
+    display: flex;
+    justify-content:center;
+}
+.top h3{
+    margin-top: 10px;
+}
+.top img{
+    margin-left: 8px;
+}
+
+label{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+/*  Drawing tools section */
+.drawing-Tools{
+background-color:#202020;   /*  #dddddd  */
+border-radius: 3px;
+color: rgb(252, 252, 252);  /*  black */ 
+width: 10rem;
+height: 100vh;
+}
+
+ul.options{
+ margin-top: 60px;
+      list-style: none;
+      margin-left: 12px;
+}
+
+li.option1{
+    margin-bottom: 5px;
+}
+li.option2{
+    margin-bottom: 15px;
+}
+li.option3{
+    margin-bottom: 6px;
+}
+li.option4{
+    margin-bottom: 30px;
+}
+.option2 input{
+    cursor: pointer;
+}
+.option4 input{
+    cursor: pointer;
+} 
+
+
+
+div.buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.buttons button{
+     border: none;
+  outline: none;
+  background: none;
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
+.buttons .Reseat{
+    cursor: pointer;
+   color: #fcfeff;
+   border: 1 solid #0189f8;
+ background: blue;
+ height: 27px;
+ width: 60%;
+ letter-spacing: 1.3px;
+}
+.buttons .Save-as-image{
+    cursor: pointer;
+    color: #fbfdfd;
+   border: 1 solid #0189f8;
+ background: blue;
+ height: 30px;
+margin-right: 12px;
+ width: 77%;
+}
+
+
+
+
+
+
+
+/* Drawing board */   
+
+div.Drawing-Board{
+width: 100vw;
+height: 100vh;
+}
+
+canvas.canvas-Board{
+    width: 100vw;
+    height: 100vh;
+}

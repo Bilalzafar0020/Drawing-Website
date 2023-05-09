@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Web App </title>
+  <!--css link  -->  
+    <link href="./style.css" rel="stylesheet">
+    
+      <!-- Favicon image (icon for website title) -->
+
+  <link rel="icon"  type="image/x-icon" href="./drawing2.png" style="color: blue;" >
+
+</head>
+<body>
+
+<nav >
+
+    <div class="top">
+        <h3 class="top heading">Draw Your Thoughts</h3>
+        <img src="./drawing2.png" width="50px">
+    
+    </div>
+
+</nav>
+
+
+
+    <main class="container">
+
+<div class="drawing-Tools" id="toolbar">
+
+
+    <label > Tools</label>
+<ul class="options">
+
+   
+    <li class="option1">   <span>Line - width</span></li>
+    
+    <li class="option2">
+<input type="range"  >
+    </li>
+ 
+<li class="option3"><span>Colors</span></li>
+
+<li class="option4"> <input id="stroke"  type="color" value="#f50505" > </li>
+
+
+
+<div class="buttons">
+<button class="Reseat" >Reseat</button>
+<button class="Save-as-image">Save As Image</button>
+</div>
+
+
+</div>
+
+
+
+<div class="Drawing-Board" >
+
+<canvas id="Drawing-Board" class="canvas-Board"></canvas>
+
+</div>
+
+
+
+</main>
+
+<!--  Javascript-->
+<script src="./script.js"></script>
+
+</body>
+</html>
