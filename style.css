@@ -10,6 +10,7 @@ height: 100vh;
  max-width: 100vw;
 overflow: hidden;
 background-color: #ffffff;
+background-image: url(./1.avif);
 }
 
    main.container{
@@ -25,6 +26,7 @@ background-color: #ffffff;
 /* nav bar */ 
 nav{
     background-color: #f8f8f8;
+    cursor: not-allowed;
 }
 
 .top{
@@ -44,18 +46,22 @@ label{
     font-size: 25px;
     font-weight: bold;
     letter-spacing: 2px;
+    margin-top: 20px;
 }
 /*  Drawing tools section */
 .drawing-Tools{
 background-color:#202020;   /*  #dddddd  */
-border-radius: 3px;
+border-radius: 1px;
 color: rgb(252, 252, 252);  /*  black */ 
 width: 10rem;
-height: 100vh;
+height: 80rem;  /* can be vh */   
+cursor: not-allowed;
 }
 
+
+
 ul.options{
- margin-top: 60px;
+ margin-top: 120px;
       list-style: none;
       margin-left: 12px;
 }
@@ -128,4 +134,6 @@ height: 100vh;
 canvas.canvas-Board{
     width: 100vw;
     height: 100vh;
+   /* cursor: url('./pencil4.png') 100 100, default;   not working because of png-24 file*/
+   cursor: crosshair;
 }
