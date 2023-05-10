@@ -113,9 +113,10 @@ div.buttons{
     color: #fbfdfd;
    border: 1 solid #0189f8;
  background: blue;
- height: 30px;
+ height: 27px;
 margin-right: 12px;
- width: 77%;
+ width: 60%;
+ letter-spacing: 1.3px;
 }
 
 

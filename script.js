@@ -1,5 +1,9 @@
 let canvas = document.getElementById("Drawing-Board"); 
 
+//  canvas setting
+let cObject = canvas.getContext("2d");
+
+
 //  line-width
 lineWidth = document.querySelector("#line-Widther");
 
@@ -7,8 +11,16 @@ lineWidth = document.querySelector("#line-Widther");
 // colors selections
 colors = document.querySelector("#stroke");
 
-//  canvas setting
-let cObject = canvas.getContext("2d");
+
+//   Reset drawing board
+
+clear = document.querySelector("#Reset");
+
+
+//  download image
+
+save = document.querySelector("#download");
+
 
 
 
@@ -29,10 +41,9 @@ cObject.stroke() // filling lines
 
 
 //  Tools area
+
 // line width according to range value
 lineWidth.addEventListener("change", ()=> cursorWidth = lineWidth.value)
-
-
 
 
 //  colors stroke;
@@ -43,6 +54,27 @@ if( e.target.id ==='stroke'){
 };
 
 })
+
+//  Reset button
+
+clear.addEventListener("click" , () =>{
+
+cObject.clearRect(0 , 0 , canvas.width , canvas.height) 
+}) ; 
+
+
+//  save image
+save.addEventListener("click", () =>{
+ let link = document.createElement("a"); // create ancher tag (a) because it have href and values
+
+ link.download = `${Date.now()}.jpg `; // put the today date in value of link + jpg format  we can also use png format by just putting png and in  toDateURL(image/png)
+
+ 
+ link.href = canvas.toDataURL(); //  put the canvas data in href ;
+
+ 
+ link.click(); // click the link to download
+} )
 
 
 
