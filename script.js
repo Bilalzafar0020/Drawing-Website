@@ -72,7 +72,7 @@ save.addEventListener("click", () =>{
  
  link.href = canvas.toDataURL(); //  put the canvas data in href ;
 
- 
+
  link.click(); // click the link to download
 } )
 
