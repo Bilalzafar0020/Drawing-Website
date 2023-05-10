@@ -40,6 +40,30 @@ cObject.stroke() // filling lines
 
 
 
+// to return valuable width/height of element we have to set the canvas width/height + offset width/height
+window.addEventListener("load" , () =>{
+ 
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+});
+
+
+
+
+/* we make variable above cDrawing = false and this function is for that work that when mouse
+is down  start making line for that we made addeventlistner below  and when up  stop it
+ also for that we make a addeventlistner below  */ 
+let drawingStart = () =>{
+    cDrawing = true;
+    cObject.beginPath() /* their was a problem mouseup event that the new line start from 
+    the old position , it is a method it will solve it */ 
+
+  cObject.lineWidth = cursorWidth //start drawing according to the user selected cursor width   
+}
+
+
+
+
 //  Tools area
 
 // line width according to range value
@@ -75,30 +99,6 @@ save.addEventListener("click", () =>{
 
  link.click(); // click the link to download
 } )
-
-
-
-// to return valuable width/height of element we have to set the canvas width/height + offset width/height
-window.addEventListener("load" , () =>{
- 
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-});
-
-
-
-
-/* we make variable above cDrawing = false and this function is for that work that when mouse
-is down  start making line for that we made addeventlistner below  and when up  stop it
- also for that we make a addeventlistner below  */ 
-let drawingStart = () =>{
-    cDrawing = true;
-    cObject.beginPath() /* their was a problem mouseup event that the new line start from 
-    the old position , it is a method it will solve it */ 
-
-  cObject.lineWidth = cursorWidth //start drawing according to the user selected cursor width   
-}
-
 
 
 
