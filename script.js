@@ -1,16 +1,21 @@
 let canvas = document.getElementById("Drawing-Board"); 
 
 //  line-width
+lineWidth = document.querySelector("#line-Widther");
 
-lineWidth = document.querySelector("#line-Widther")
+
+// colors selections
+colors = document.querySelector("#stroke");
 
 //  canvas setting
 let cObject = canvas.getContext("2d");
 
 
 
+// global variables
 let cDrawing= false;
 let cursorWidth = 3;
+
 
 
 // function for mouse move  
@@ -22,12 +27,32 @@ cObject.stroke() // filling lines
 };
 
 
+
+//  Tools area
+// line width according to range value
+lineWidth.addEventListener("change", ()=> cursorWidth = lineWidth.value)
+
+
+
+
+//  colors stroke;
+//  change color  according to user selected stroke style
+colors.addEventListener("change", e => {
+if( e.target.id ==='stroke'){
+    cObject.strokeStyle = e.target.value;
+};
+
+})
+
+
+
 // to return valuable width/height of element we have to set the canvas width/height + offset width/height
 window.addEventListener("load" , () =>{
  
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
 });
+
 
 
 
@@ -39,7 +64,7 @@ let drawingStart = () =>{
     cObject.beginPath() /* their was a problem mouseup event that the new line start from 
     the old position , it is a method it will solve it */ 
 
-  cObject.lineWidth = cursorWidth //   
+  cObject.lineWidth = cursorWidth //start drawing according to the user selected cursor width   
 }
 
 
