@@ -1,4 +1,4 @@
-let canvas = document.getElementById("Drawing-Board"); 
+let canvas = document.querySelector("#Drawing-Board"); 
 
 //  canvas setting
 let cObject = canvas.getContext("2d");
