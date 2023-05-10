@@ -29,6 +29,19 @@ let cDrawing= false;
 let cursorWidth = 3;
 
 
+/* we make variable above cDrawing = false and this function is for that work that when mouse
+is down  start making line for that we made addeventlistner below  and when up  stop it
+ also for that we make a addeventlistner below  */ 
+let drawingStart = () =>{
+    cDrawing = true;
+    cObject.beginPath() /* their was a problem mouseup event that the new line start from 
+    the old position , it is a method it will solve it */ 
+
+  cObject.lineWidth = cursorWidth //start drawing according to the user selected cursor width   
+}
+
+
+
 
 // function for mouse move  
 let mouseDrawing = (e) =>{
@@ -49,17 +62,6 @@ window.addEventListener("load" , () =>{
 
 
 
-
-/* we make variable above cDrawing = false and this function is for that work that when mouse
-is down  start making line for that we made addeventlistner below  and when up  stop it
- also for that we make a addeventlistner below  */ 
-let drawingStart = () =>{
-    cDrawing = true;
-    cObject.beginPath() /* their was a problem mouseup event that the new line start from 
-    the old position , it is a method it will solve it */ 
-
-  cObject.lineWidth = cursorWidth //start drawing according to the user selected cursor width   
-}
 
 
 
