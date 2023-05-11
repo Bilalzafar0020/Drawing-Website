@@ -17,28 +17,8 @@ background-color: #ffffff;
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: row;
- max-width: 1050px ;    
- 
+    flex-direction: row; 
 }  
-
-/* 
-/* nav bar
-nav{
-    background-color: #f8f8f8;
-    cursor: not-allowed;
-}
-
-.top{
-    display: flex;
-    justify-content:center;
-}
-.top h3{
-    margin-top: 10px;
-}
-.top img{
-    margin-left: 8px;
-}  */ 
 
 h2{
     display: flex;
@@ -46,7 +26,7 @@ h2{
     font-size: 25px;
     font-weight: bold;
     letter-spacing: 2px;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 /*  Drawing tools section */
 .drawing-Tools{
@@ -57,7 +37,6 @@ width: 10rem;
 height: 80rem;  /* can be vh */   
 cursor: not-allowed;
 }
-
 
 
 ul.options{
@@ -143,9 +122,27 @@ height: 100vh;
 
 canvas.canvas-Board{
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
    /* cursor: url('./pencil4.png') 100 100, default;   not working because of png-24 file*/
    cursor: crosshair;
 }
 
+@media screen and (max-width:450px) and (min-width:320px) {
+    canvas.canvas-Board {
+      max-width: 60vw;
+        max-height: 100vh;
+    }
+}
+@media screen and (max-width:925px) and (min-width:600px) {
+    canvas.canvas-Board {
+      max-width: 74vw;
+        max-height: 100vh;
+    }
+}
 
+@media screen and (max-width:600px) and (min-width:450px) {
+    canvas.canvas-Board {
+      max-width: 72vw;
+        max-height: 100vh;
+    }
+}

@@ -5,7 +5,7 @@ const lineWidth = document.querySelector("#line-Widther"); // line-width
 const colors = document.querySelector("#stroke");  // stroke
 const clear = document.querySelector("#Reset"); // reset
 const save = document.querySelector("#download"); //  download image
- // const text1 = document.querySelector("#text") //  text 
+  // const text1 = document.querySelector("#text") //  text 
 
 let cDrawing = false;  
 let cursorWidth = 3;
@@ -33,14 +33,6 @@ const mouseDrawing = (e) => {
   cObject.lineTo(e.offsetX, e.offsetY);  // draw the line according to x and y coordinates
   cObject.stroke();   //  visible the line 
 };
-
-/*  Draw text
-
-let text  =  () =>    {
-  
-cObject.font("18px san-serif")
-cObject.fillText( text1.value ,10,50);
-};  */ 
 
 
 // Update cursor width when the user changes the line width
@@ -107,6 +99,23 @@ canvas.addEventListener("touchstart", function (event) {
        y: touch.clientY - rect.top,
      };
    }
+   
+
+  //  draw text 
+  //  text1.addEventListener("click", () => {
+  //   cDrawing = false;
+  //   cObject.clearRect(0, 0, canvas.width, canvas.height);
+  //   drawText();
+  // });
+
+
+  // function drawText() {
+  //   const text = document.querySelector("#textInput").value;
+  //   if (!text) return;
+  //   cObject.font = "24px sans-serif";
+  //   cObject.fillText(text, 40, 40);
+  // }
+
 
 
 
