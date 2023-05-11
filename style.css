@@ -22,8 +22,8 @@ background-color: #ffffff;
  
 }  
 
-
-/* nav bar */ 
+/* 
+/* nav bar
 nav{
     background-color: #f8f8f8;
     cursor: not-allowed;
@@ -38,7 +38,7 @@ nav{
 }
 .top img{
     margin-left: 8px;
-}
+}  */ 
 
 h2{
     display: flex;
@@ -147,6 +147,5 @@ canvas.canvas-Board{
    /* cursor: url('./pencil4.png') 100 100, default;   not working because of png-24 file*/
    cursor: crosshair;
 }
-
 
 
