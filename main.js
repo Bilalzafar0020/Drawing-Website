@@ -1,6 +1,6 @@
 // Declare variables with const or let
 const canvas = document.querySelector("#Drawing-Board");
-const context = canvas.getContext("2d"); 
+const context = canvas.getContext("2d");  //  it's a canvas drawing object 
 const lineWidth = document.querySelector("#line-Widther"); // line-width
 const colors = document.querySelector("#stroke");  // stroke
 const clear = document.querySelector("#Reset"); // reset
@@ -14,11 +14,13 @@ const shapes = document.querySelectorAll(".tool");  // for all shapes
 let cDrawing = false;   // to control lines during mouse down , up etc
 let cursorWidth = 3;   // for line width 
 let selectedShape = "Brush"; // for shapes
-let prevMouseX, prevMouseY=0;  
+let prevMouseX = 0;
+let  prevMouseY=0;  
 
 
 
 // Set canvas width and height on window load
+// it will return the width and height according to it's mouse direction or set the canvas line
 window.addEventListener("load", () => {
   canvas.width = canvas.offsetWidth;
   canvas.height = canvas.offsetHeight;
@@ -27,6 +29,10 @@ window.addEventListener("load", () => {
 //  setup for the rectangle
 
 const drawRect = (e) =>{
+
+/*  //////////////////////    the main problem is that  i havw to apply the below code other wise 
+ we can draw one and aanother but it also remove the last one execpt line only circle */          
+
   context.clearRect(0, 0, canvas.width, canvas.height); // clear canvas
   context.strokeRect( e.offsetX,
     e.offsetY,
@@ -53,7 +59,8 @@ let radius = Math.sqrt(Math.pow ((e.offsetX - prevMouseX), 2) + Math.pow((e.offs
  
 context.arc(prevMouseX,prevMouseY,radius , 0 , 2 * Math.PI  ) // Pi is the ratio of circumfernce of circle
   context.stroke();
-  
+  // context.fillStyle = "blue";
+  // context.fill();
 }
 
 
@@ -64,8 +71,9 @@ const mouseDown = (e) => {
 
 prevMouseX = e.offsetX;
 prevMouseY = e.offsetY; 
-  context.beginPath();
-  context.lineWidth = cursorWidth;
+  context.beginPath();  //  when we draw without it drawing was starting from the last draw point not from according to the mouse
+  //  beginPath  create a new path to draw 
+  context.lineWidth = cursorWidth;  // setting the line width according to curse default width which we have defines above
 };
 
 
@@ -74,7 +82,7 @@ prevMouseY = e.offsetY;
 
 // Draw lines as the mouse moves
 const mouseMove = (e) => {
-  if (!cDrawing) return;
+  if (!cDrawing) return;   //  checks if the user is currently drawing on the canvas
 
 if(selectedShape === "Brush"){
   
@@ -97,17 +105,15 @@ else if (selectedShape === "circle"){
 // Sets the value of the variable "selectedShape" to the id of the clicked shape button.
 // Outputs the id of the clicked shape button to the console.
 
-
 shapes.forEach(btn =>{
   btn.addEventListener("click" , ()=>{ 
  
-    document.querySelector(".options ").classList.remove("active");
+    document.querySelector(".options  ").classList.remove("active");
     btn.classList.add("active")  ;
     selectedShape = btn.id
      console.log(btn.id);
   })
 })
-
 
 
 
@@ -137,7 +143,7 @@ save.addEventListener("click", () => {
   const link = document.createElement("a");
   link.download = `${Date.now()}.jpg`;
   link.href = canvas.toDataURL();
-  link.click();
+  link.click();  //  it triggers the click event to start  download  automatically (click) is a method here
 });
 
 
@@ -209,6 +215,44 @@ if (canvas) {
   canvas.addEventListener("mouseup", () => (cDrawing = false));  // if mouse up false the line making
 
 };
+
+
+
+
+//   another method for triangle, circles
+
+// let shape = "";
+
+
+
+// function drawCircle() {
+//   shape = "circle";
+//   canvas.addEventListener("mousemove", draw);
+// };
+
+// function drawRectangle() {
+//   shape = "rectangle";
+//   canvas.addEventListener("mousemove", draw);
+// }  
+// function draw(event) {
+//   var x = event.clientX - canvas.offsetLeft;
+//   var y = event.clientY - canvas.offsetTop;
+//   var radius = 50;
+
+//   if (shape === "circle") {
+//       context.beginPath();
+//       context.arc(x, y, radius, 0, 2 * Math.PI);
+//       context.stroke();
+//   }
+//   else if (shape === "rectangle") {
+//       context.strokeRect(x - 50, y - 50, 100, 100);
+//   }
+// };
+
+
+//   canvas.addEventListener("mouseup", () => (shape = ""));
+
+//   canvas.addEventListener("mouseup",() => (shape=""));
 
 
 
